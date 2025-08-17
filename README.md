@@ -9,10 +9,10 @@ This project demonstrates a real-world data cleaning exercise. It showcases the 
 
 ##  ⚙️ Technolgies Used
 * Excel
-* SQL (SSMS)
+* SQL (PostgreSQL)
 
 ## Data Processing
-* Upload dataset to SSMS
+* Upload dataset to pgAdmin 4
 * Create new table for clean data
 * Remove unnecessay data
 * Transforming the data into a format suitable for analysis
@@ -46,7 +46,7 @@ This project demonstrates a real-world data cleaning exercise. It showcases the 
    Apply the data cleaning steps such as removing duplicates, correcting column names, fixing missing values, and standardizing entries.
 
 6. **Load into SQL Server (optional)**  
-   If using SSMS:
+   If using SSMS or PostgreSQL:
    - Import the cleaned dataset into a new table.
    - Use SQL queries to validate and transform data as needed.
 
