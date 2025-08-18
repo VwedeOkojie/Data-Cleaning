@@ -44,15 +44,15 @@ This project demonstrates a real-world data cleaning exercise. It showcases the 
    - **Python** for automation
    - **SQL** for SQL-based transformation
 
-5. **Clean the data**  
+4. **Clean the data**  
    Apply the data cleaning steps such as removing duplicates, correcting column names, fixing missing values, and standardizing entries.
 
-6. **Load into SQL Server (optional)**  
+5. **Load into SQL Server (optional)**  
    If using SSMS or PostgreSQL:
    - Import the cleaned dataset into a new table.
    - Use SQL queries to validate and transform data as needed.
 
-7. **Analyze or visualize**  
+6. **Analyze or visualize**  
    Once clean, use the data in Power BI, Tableau, or your tool of choice for analysis, dashboards, or reports.
 
 ## 💡 Why This Matters
