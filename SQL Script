@@ -40,4 +40,43 @@ SELECT
 	COALESCE (consumer_first_class, consumer_same_day, consumer_second_class, consumer_standard_class,
 	corporate_first_class, corporate_same_day, corporate_second_class, corporate_standard_class,
 	home_office_first_class, home_office_same_day, home_office_second_class, home_office_standard_class)
-	FROM dirty_table
+	FROM dirty_table;
+
+-- Remove Whitespaces
+UPDATE clean_table
+SET
+	order_id = TRIM(order_id), 
+	segment = TRIM(segment),
+	ship_mode = TRIM(ship_mode)
+
+-- Check for duplicates
+SELECT
+	order_id,
+	segment,
+	ship_mode,
+	COUNT(*)
+FROM clean_table
+GROUP BY order_id, segment, ship_mode
+HAVING COUNT(*) > 1;
+
+-- Check for missing values
+SELECT *
+FROM clean_table
+WHERE order_id IS NULL
+OR segment IS NULL
+OR ship_mode IS NULL
+OR sales IS NULL;
+
+
+-- Delete Duplicates
+WITH CTE AS (
+	SELECT *,
+	ROW_NUMBER () OVER (PARTITION BY order_id, segment, ship_mode ORDER BY ctid) AS rn	
+	FROM clean_table
+)
+DELETE FROM clean_table
+WHERE ctid IN (SELECT ctid FROM CTE WHERE rn > 1);
+
+-- Change Data Type
+ALTER TABLE clean_table
+ALTER COLUMN Sales TYPE FLOAT USING Sales::FLOAT;
