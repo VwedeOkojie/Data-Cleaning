@@ -22,9 +22,11 @@ This project demonstrates a real-world data cleaning exercise. It showcases the 
 
 ## Before & After
 
-![image](https://github.com/user-attachments/assets/a49c5663-58cd-4727-887e-2533b00e0d49)
+<img width="1918" height="691" alt="image" src="https://github.com/user-attachments/assets/5018d52b-ad14-43db-ae45-f9cf35ff76b5" />
 
-![image](https://github.com/user-attachments/assets/626460f3-a0dc-458e-ad59-90594d770292)
+
+<img width="634" height="841" alt="image" src="https://github.com/user-attachments/assets/907581f1-60d1-454c-9118-6f138986b3bf" />
+
 
 
 ## 📥 How to Use the Project
