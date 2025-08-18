@@ -1,6 +1,9 @@
 # 🧹 Data-Cleaning-Practice
 Practice data cleaning with this dataset
 
+<img width="2380" height="2380" alt="data_cleaning" src="https://github.com/user-attachments/assets/64de2c2f-b3fc-4963-abc9-76b82cda1233" />
+
+
 ![image](https://github.com/user-attachments/assets/f0c7d324-9120-4ea3-86c1-3bff4e3c86ce)
 
 
