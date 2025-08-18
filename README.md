@@ -25,7 +25,8 @@ This project demonstrates a real-world data cleaning exercise. It showcases the 
 <img width="1918" height="691" alt="image" src="https://github.com/user-attachments/assets/5018d52b-ad14-43db-ae45-f9cf35ff76b5" />
 
 
-<img width="634" height="841" alt="image" src="https://github.com/user-attachments/assets/907581f1-60d1-454c-9118-6f138986b3bf" />
+<img width="1902" height="814" alt="image" src="https://github.com/user-attachments/assets/2abcfc04-dd90-4642-9f66-3cb3f4e8b9e0" />
+
 
 
 
