@@ -1,11 +1,7 @@
 # 🧹 Data-Cleaning-Practice
 Practice data cleaning with this dataset
 
-<img width="2380" height="2380" alt="data_cleaning" src="https://github.com/user-attachments/assets/64de2c2f-b3fc-4963-abc9-76b82cda1233" />
-
-
-![image](https://github.com/user-attachments/assets/f0c7d324-9120-4ea3-86c1-3bff4e3c86ce)
-
+<img width="1500" height="1500" alt="data_cleaning" src="https://github.com/user-attachments/assets/64de2c2f-b3fc-4963-abc9-76b82cda1233" />
 
 ## 📁 Project Description
 This project demonstrates a real-world data cleaning exercise. It showcases the transformation of a messy dataset (`dirtydata.csv`) into a clean, analysis-ready dataset (`cleandata.xlsx`). The objective of this project is to illustrate essential data cleaning techniques used by data analysts to prepare data for accurate insights and decision-making.
