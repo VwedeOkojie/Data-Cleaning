@@ -6,7 +6,7 @@ Practice data cleaning with this dataset
 ## 📁 Project Description
 This project demonstrates a real-world data cleaning exercise. It showcases the transformation of a messy dataset (`dirtydata.csv`) into a clean, analysis-ready dataset (`cleandata.xlsx`). The objective of this project is to illustrate essential data cleaning techniques used by data analysts to prepare data for accurate insights and decision-making.
 
-##  ⚙️ Technolgies Used
+##  ⚙️ Technologies Used
 * Excel
 * SQL (PostgreSQL)
 
@@ -44,13 +44,18 @@ This project demonstrates a real-world data cleaning exercise. It showcases the 
    - **Python** for automation
    - **SQL** for SQL-based transformation
 
-4. **Clean the data**  
-   Apply the data cleaning steps such as removing duplicates, correcting column names, fixing missing values, and standardizing entries.
+4. **PG Admin**
+  - Use the first block of code in  `SQL Script` to create a table called dirty_table
+  - Right click on the dirty_table you just created
+  - Click on import and export data
+    <img width="213" height="597" alt="image" src="https://github.com/user-attachments/assets/1962e72c-5665-4638-b516-c5d9c79d3d44" />
+  - Choose your filename by clicking on folder icon, then Ok
+    <img width="877" height="685" alt="image" src="https://github.com/user-attachments/assets/5d457417-d225-4b2d-ba0f-2be2df22af29" />
 
-5. **Load into SQL Server (optional)**  
-   If using SSMS or PostgreSQL:
-   - Import the cleaned dataset into a new table.
-   - Use SQL queries to validate and transform data as needed.
+
+5. **Clean the data**  
+   - Use 2nd block of code on `SQL Script` to create a new table and properly structure data
+   - Then apply the data cleaning steps such as removing duplicates, correcting column names, fixing missing values, and standardizing entries.
 
 6. **Analyze or visualize**  
    Once clean, use the data in Power BI, Tableau, or your tool of choice for analysis, dashboards, or reports.
@@ -68,7 +73,7 @@ Building a solid portfolio project for aspiring data analysts
 
 - [LICENCE](https://github.com/VwedeOkojie/Data-Cleaning-Practice/blob/main/LICENSE) - Permission
 - [README.md](https://github.com/VwedeOkojie/Data-Cleaning-Practice/blob/main/README.md) - Project overview and instructions `You are here`
-- [SQL Script](https://github.com/VwedeOkojie/Data-Cleaning-Practice/blob/main/SQL%20Script) - SSMS
+- [SQL Script](https://github.com/VwedeOkojie/Data-Cleaning-Practice/blob/main/SQL%20Script) - Postgresql
 - [clean_data.csv](https://github.com/VwedeOkojie/Data-Cleaning-Practice/blob/main/clean_data.csv) - Folder containing clean dataset
 - [dirty_data.csv](https://github.com/VwedeOkojie/Data-Cleaning-Practice/blob/main/dirty_data.csv) - Folder containing dirty dataset
 
