@@ -1,3 +1,24 @@
+CREATE TABLE dirty_table (
+    order_id VARCHAR,
+    consumer_first_class NUMERIC,
+    consumer_same_day NUMERIC,
+    consumer_second_class NUMERIC,
+    consumer_standard_class NUMERIC,
+    consumer_total NUMERIC,
+    corporate_first_class NUMERIC,
+    corporate_same_day NUMERIC,
+    corporate_second_class NUMERIC,
+    corporate_standard_class NUMERIC,
+    corporate_total NUMERIC,
+    home_office_first_class NUMERIC,
+    home_office_same_day NUMERIC,
+    home_office_second_class NUMERIC,
+    home_office_standard_class NUMERIC,
+    home_office_total NUMERIC
+);
+
+
+
 CREATE TABLE clean_table
 	(order_id VARCHAR(50),
 	segment VARCHAR (50),
