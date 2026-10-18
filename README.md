@@ -44,7 +44,7 @@ This project demonstrates a real-world data cleaning exercise. It showcases the 
    - **Python** for automation
    - **SQL** for SQL-based transformation
 
-4. **PG Admin**
+4. **SQL - PG Admin**
   - Use the first block of code in  `SQL Script` to create a table called dirty_table
   - Right click on the dirty_table you just created
   - Click on import and export data
