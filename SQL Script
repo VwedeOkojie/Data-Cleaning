@@ -1,3 +1,5 @@
+--  Create a table called dirty_table before import
+
 CREATE TABLE dirty_table (
     order_id VARCHAR,
     consumer_first_class NUMERIC,
@@ -18,6 +20,7 @@ CREATE TABLE dirty_table (
 );
 
 
+--  Create a clean table called clean_table
 
 CREATE TABLE clean_table
 	(order_id VARCHAR(50),
@@ -25,50 +28,90 @@ CREATE TABLE clean_table
 	ship_mode VARCHAR (50),
 	sales Float);
 
+
+--  Restructure the table
+
 INSERT INTO clean_table
 (order_id, segment, ship_mode, sales)
 
+CREATE TABLE dirty (
+    order_id VARCHAR,
+    consumer_first_class NUMERIC,
+    consumer_same_day NUMERIC,
+    consumer_second_class NUMERIC,
+    consumer_standard_class NUMERIC,
+    consumer_total NUMERIC,
+    corporate_first_class NUMERIC,
+    corporate_same_day NUMERIC,
+    corporate_second_class NUMERIC,
+    corporate_standard_class NUMERIC,
+    corporate_total NUMERIC,
+    home_office_first_class NUMERIC,
+    home_office_same_day NUMERIC,
+    home_office_second_class NUMERIC,
+    home_office_standard_class NUMERIC,
+    home_office_total NUMERIC
+);
+
+
+--Create a clean table called clean_table
+
+CREATE TABLE clean_tab
+	(order_id VARCHAR(50),
+	segment VARCHAR (50),
+	ship_mode VARCHAR (50),
+	sales Float);
+
+--Restructure the table
+INSERT INTO clean_tab 
+	(order_id, segment, ship_mode, sales)
 SELECT 
 	order_id AS order_id,
-	CASE
-		WHEN consumer_first_class IS NOT NULL THEN 'consumer'
-		WHEN consumer_same_day IS NOT NULL THEN 'consumer'
-		WHEN consumer_second_class IS NOT NULL THEN 'consumer'
-		WHEN consumer_standard_class IS NOT NULL THEN 'consumer'
-		WHEN corporate_first_class IS NOT NULL THEN 'corporate'
-		WHEN corporate_same_day IS NOT NULL THEN 'corporate'
-		WHEN corporate_second_class IS NOT NULL THEN 'corporate'
-		WHEN corporate_standard_class IS NOT NULL THEN 'corporate'
-		WHEN home_office_first_class IS NOT NULL THEN 'home_office'
-		WHEN home_office_same_day IS NOT NULL THEN 'home_office'
-		WHEN home_office_second_class IS NOT NULL THEN 'home_office'
-		WHEN home_office_standard_class IS NOT NULL THEN 'home_office'
+	CASE 
+		WHEN consumer_first_class IS NOT NULL THEN 'Consumer'
+		WHEN consumer_same_day IS NOT NULL THEN 'Consumer'
+		WHEN consumer_second_class IS NOT NULL THEN 'Consumer'
+		WHEN consumer_standard_class IS NOT NULL THEN 'Consumer'
+		WHEN corporate_first_class IS NOT NULL THEN 'Corporate'
+		WHEN corporate_same_day IS NOT NULL THEN 'Corporate'
+		WHEN corporate_second_class IS NOT NULL THEN 'Corporate'
+		WHEN corporate_standard_class IS NOT NULL THEN 'Corporate'
+		WHEN home_office_first_class IS NOT NULL THEN 'Home Office'
+		WHEN home_office_same_day IS NOT NULL THEN 'Home Office'
+		WHEN home_office_second_class IS NOT NULL THEN 'Home Office'
+		WHEN home_office_standard_class IS NOT NULL	THEN 'Home Office'
 	END AS segment,
-	CASE
-		WHEN consumer_first_class IS NOT NULL THEN 'first_class'
-		WHEN consumer_same_day IS NOT NULL THEN 'same_day'
-		WHEN consumer_second_class IS NOT NULL THEN 'second_class'
-		WHEN consumer_standard_class IS NOT NULL THEN 'standard_class'
-		WHEN corporate_first_class IS NOT NULL THEN 'first_class'
-		WHEN corporate_same_day IS NOT NULL THEN 'same_day'
-		WHEN corporate_second_class IS NOT NULL THEN 'second_class'
-		WHEN corporate_standard_class IS NOT NULL THEN 'standard_class'
-		WHEN home_office_first_class IS NOT NULL THEN 'first_class'
-		WHEN home_office_same_day IS NOT NULL THEN 'same_day'
-		WHEN home_office_second_class IS NOT NULL THEN 'second_class'
-		WHEN home_office_standard_class IS NOT NULL THEN 'standard_class'
+	CASE 
+		WHEN consumer_first_class IS NOT NULL THEN 'First Class'
+		WHEN consumer_same_day IS NOT NULL THEN 'Same Day'
+		WHEN consumer_second_class IS NOT NULL THEN 'Second Class'
+		WHEN consumer_standard_class IS NOT NULL THEN 'Standard Class'
+		WHEN corporate_first_class IS NOT NULL	THEN 'First Class'
+		WHEN corporate_same_day IS NOT NULL	 THEN 'Same Day'
+		WHEN corporate_second_class IS NOT NULL THEN 'Second Class'
+		WHEN corporate_standard_class IS NOT NULL THEN 'Corporate'
+		WHEN home_office_first_class IS NOT NULL THEN 'Standard Class'
+		WHEN home_office_same_day IS NOT NULL THEN 'Same Day'
+		WHEN home_office_second_class IS NOT NULL THEN 'Second Class'
+		WHEN home_office_standard_class	IS NOT NULL THEN 'Standard Class'
 	END AS ship_mode,
-	COALESCE (consumer_first_class, consumer_same_day, consumer_second_class, consumer_standard_class,
-	corporate_first_class, corporate_same_day, corporate_second_class, corporate_standard_class,
-	home_office_first_class, home_office_same_day, home_office_second_class, home_office_standard_class)
-	FROM dirty_table;
+	COALESCE(
+		consumer_first_class, consumer_same_day, consumer_second_class, consumer_standard_class, 
+		corporate_first_class, corporate_same_day, corporate_second_class, corporate_standard_class, 
+		home_office_first_class, home_office_same_day, home_office_second_class, home_office_standard_class
+	)
+FROM dirty_table
+ORDER BY segment, ship_mode, order_id;
+
+-- Go ahead, admire your hard work
+SELECT * FROM clean_tab;
 
 -- Remove Whitespaces
 UPDATE clean_table
 SET
 	order_id = TRIM(order_id), 
 	segment = TRIM(segment),
-	ship_mode = TRIM(ship_mode)
+	ship_mode = TRIM(ship_mode);
 
 -- Check for duplicates
 SELECT
